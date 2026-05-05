@@ -88,19 +88,45 @@
 											Denali is the crown of North American alpinism — a genuine high-altitude expedition requiring weeks on the mountain, full crevasse rescue competency, and the ability to manage serious objective hazard in remote, self-sufficient conditions. The West Buttress route involves hauling heavy sleds through the Kahiltna Glacier approach, establishing camps through 12,00 ft, 14,200 ft, and 17,200 ft, and timing a summit push through unpredictable subarctic weather.
 										</p>
 										
-											<div id="denali-gallery" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;"></div>
+											<!-- Denali Slideshow -->
+												<div style="text-align:center; position:relative; max-width:700px; margin:0 auto;">
 
-											<script>
-											const gallery = document.getElementById('denali-gallery');
-											const total = 11;
-											for (let i = 1; i <= total; i++) {
-												const img = document.createElement('img');
-												img.src = `images/denali/Denali${i}.jpeg`;
-												img.alt = `Denali photo ${i}`;
-												img.style = "width:30%; min-width:200px; border-radius:4px;";
-												gallery.appendChild(img);
-											}
-											</script>
+												<img id="denali-slide" src="images/denali/Denali1.jpeg" alt="Denali photo 1"
+													style="width:100%; border-radius:4px; display:block;" />
+
+												<!-- Arrows -->
+												<button onclick="changeSlide('denali', -1)"
+													style="position:absolute; top:50%; left:0; transform:translateY(-50%);
+														background:rgba(0,0,0,0.5); color:white; border:none; font-size:2em;
+														padding:0.2em 0.5em; cursor:pointer; border-radius:4px;">&#8592;</button>
+
+												<button onclick="changeSlide('denali', 1)"
+													style="position:absolute; top:50%; right:0; transform:translateY(-50%);
+														background:rgba(0,0,0,0.5); color:white; border:none; font-size:2em;
+														padding:0.2em 0.5em; cursor:pointer; border-radius:4px;">&#8594;</button>
+
+												<!-- Counter -->
+												<p id="denali-counter" style="color:#aaa; margin-top:0.5em;">1 / 11</p>
+
+												</div>
+
+												<script>
+												const slideshows = {
+													denali: { current: 1, total: 11, prefix: 'images/denali/Denali' }
+												};
+
+												function changeSlide(name, direction) {
+													const show = slideshows[name];
+													show.current += direction;
+													if (show.current < 1) show.current = show.total;
+													if (show.current > show.total) show.current = 1;
+
+													document.getElementById(name + '-slide').src =
+													`${show.prefix}${show.current}.jpeg`;
+													document.getElementById(name + '-counter').textContent =
+													`${show.current} / ${show.total}`;
+												}
+												</script>
 									
 									</div>
 								</div>
