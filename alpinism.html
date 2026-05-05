@@ -194,10 +194,13 @@
 									<p>
 										Colorado's 14ers and winter alpine routes provide a year-round training environment for technical mountain travel. Winter ascents of high-altitude terrain develop the navigation, weather-reading, and team management skills that translate directly to larger expedition objectives. Colorado mountaineering has been a constant thread connecting technical ice climbing development, peak bagging, and volunteer search-and-rescue preparedness.
 									</p>
-									<p style="text-align:center; color:#aaa; padding: 2em 0;">
-										<i class="icon solid fa-images" style="font-size:2em; display:block; margin-bottom:0.5em;"></i>
-										<em>Photos and additional trip details — add content here as routes and volunteer activities are documented.</em>
-									</p>
+									<div style="text-align:center; position:relative; max-width:700px; margin:0 auto;">
+											<img id="coice-slide" src="images/coloradoice/COMISC.jpeg" alt="Colorado miscallaneous photo 1"
+												style="width:100%; border-radius:4px; display:block;" />
+											<button onclick="changeSlide('coice', -1)" class="slide-btn slide-btn-left">&#8592;</button>
+											<button onclick="changeSlide('coice', 1)"  class="slide-btn slide-btn-right">&#8594;</button>
+											<p id="coice-counter" style="color:#aaa; margin-top:0.5em;">1 / 5</p>
+									</div>
 								</div>
 							</section>
 						</div>
@@ -245,7 +248,7 @@
 							<section class="col-6 col-12-narrower">
 								<h3>Get In Touch</h3>
 								<p><strong>Email:</strong> jeffallen2.71828@gmail.com<br />
-								<strong>Phone:</strong> [Add phone number]<br />
+								<strong>Phone:</strong> +1 (720) 387-6266<br />
 								<strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jeffrey-allen-9a0b82260">jeffrey-allen-9a0b82260</a><br />
 								<strong>Location:</strong> Boulder, CO</p>
 							</section>
@@ -293,10 +296,11 @@
 		<!-- Single shared slideshow script for all galleries -->
 		<script>
 			const slideshows = {
-				denali:      { current: 1, total: 11, prefix: 'images/denali/Denali',          ext: '.jpeg' },
-				rainier:     { current: 1, total: 4,  prefix: 'images/rainier/MtR',            ext: '.jpeg' },
-				moosestooth: { current: 1, total: 6,  prefix: 'images/moosestooth/MT',         ext: '.jpeg' },
-				coice:       { current: 1, total: 5,  prefix: 'images/coloradoice/COICE',     ext: '.jpeg' }
+				denali:      { current: 1, total: 11, prefix: 'images/denali/Denali',           ext: '.jpeg' },
+				rainier:     { current: 1, total: 4,  prefix: 'images/rainier/MtR',             ext: '.jpeg' },
+				moosestooth: { current: 1, total: 6,  prefix: 'images/moosestooth/MT',          ext: '.jpeg' },
+				coice:       { current: 1, total: 6,  prefix: 'images/coloradoice/COICE',       ext: '.jpeg' },
+				comisc:      { current: 1, total: 6,  prefix: 'images/coloradomisc/COMISC',		ext: '.jpeg'}
 			};
 
 			function changeSlide(name, direction) {
