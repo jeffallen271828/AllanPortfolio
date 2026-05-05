@@ -85,49 +85,18 @@
 									<div class="inner">
 										<h3>Denali (Mt. McKinley) &mdash; 20,310 ft</h3>
 										<p>
-											Denali is the crown of North American alpinism — a genuine high-altitude expedition requiring weeks on the mountain, full crevasse rescue competency, and the ability to manage serious objective hazard in remote, self-sufficient conditions. The West Buttress route involves hauling heavy sleds through the Kahiltna Glacier approach, establishing camps through 12,00 ft, 14,200 ft, and 17,200 ft, and timing a summit push through unpredictable subarctic weather.
+											Denali is the crown of North American alpinism — a genuine high-altitude expedition requiring weeks on the mountain, full crevasse rescue competency, and the ability to manage serious objective hazard in remote, self-sufficient conditions. The West Buttress route involves hauling heavy sleds through the Kahiltna Glacier approach, establishing camps through 12,000 ft, 14,200 ft, and 17,200 ft, and timing a summit push through unpredictable subarctic weather.
 										</p>
-										
-											<!-- Denali Slideshow -->
-												<div style="text-align:center; position:relative; max-width:700px; margin:0 auto;">
 
-												<img id="denali-slide" src="images/denali/Denali1.jpeg" alt="Denali photo 1"
-													style="width:100%; border-radius:4px; display:block;" />
+										<!-- Denali Slideshow -->
+										<div style="text-align:center; position:relative; max-width:700px; margin:0 auto;">
+											<img id="denali-slide" src="images/denali/Denali1.jpeg" alt="Denali photo 1"
+												style="width:100%; border-radius:4px; display:block;" />
+											<button onclick="changeSlide('denali', -1)" class="slide-btn slide-btn-left">&#8592;</button>
+											<button onclick="changeSlide('denali', 1)"  class="slide-btn slide-btn-right">&#8594;</button>
+											<p id="denali-counter" style="color:#aaa; margin-top:0.5em;">1 / 11</p>
+										</div>
 
-												<!-- Arrows -->
-												<button onclick="changeSlide('denali', -1)"
-													style="position:absolute; top:50%; left:0; transform:translateY(-50%);
-														background:rgba(0,0,0,0.5); color:white; border:none; font-size:2em;
-														padding:0.2em 0.5em; cursor:pointer; border-radius:4px;">&#8592;</button>
-
-												<button onclick="changeSlide('denali', 1)"
-													style="position:absolute; top:50%; right:0; transform:translateY(-50%);
-														background:rgba(0,0,0,0.5); color:white; border:none; font-size:2em;
-														padding:0.2em 0.5em; cursor:pointer; border-radius:4px;">&#8594;</button>
-
-												<!-- Counter -->
-												<p id="denali-counter" style="color:#aaa; margin-top:0.5em;">1 / 11</p>
-
-												</div>
-
-												<script>
-												const slideshows = {
-													denali: { current: 1, total: 11, prefix: 'images/denali/Denali' }
-												};
-
-												function changeSlide(name, direction) {
-													const show = slideshows[name];
-													show.current += direction;
-													if (show.current < 1) show.current = show.total;
-													if (show.current > show.total) show.current = 1;
-
-													document.getElementById(name + '-slide').src =
-													`${show.prefix}${show.current}.jpeg`;
-													document.getElementById(name + '-counter').textContent =
-													`${show.current} / ${show.total}`;
-												}
-												</script>
-									
 									</div>
 								</div>
 							</section>
@@ -141,11 +110,16 @@
 										<p>
 											Rainier is one of the most glaciated peaks in the contiguous United States and serves as a premier proving ground for high-altitude techniques. The climb demands competent rope team management, crevasse navigation, fixed line ascending, and the sustained endurance of a long summit-day push departing well before midnight. A critical stepping stone in Alaskan expedition preparation.
 										</p>
-										<!-- Image gallery placeholder -->
-										<p style="text-align:center; color:#aaa; padding: 3em 0;">
-											<i class="icon solid fa-images" style="font-size:2em; display:block; margin-bottom:0.5em;"></i>
-											<em>Photo gallery (10 images) — add to <code>images/rainier/</code> and build out gallery markup here.</em>
-										</p>
+
+										<!-- Rainier Slideshow -->
+										<div style="text-align:center; position:relative; max-width:700px; margin:0 auto;">
+											<img id="rainier-slide" src="images/rainier/MtR1.jpeg" alt="Mt. Rainier photo 1"
+												style="width:100%; border-radius:4px; display:block;" />
+											<button onclick="changeSlide('rainier', -1)" class="slide-btn slide-btn-left">&#8592;</button>
+											<button onclick="changeSlide('rainier', 1)"  class="slide-btn slide-btn-right">&#8594;</button>
+											<p id="rainier-counter" style="color:#aaa; margin-top:0.5em;">1 / 4</p>
+										</div>
+
 									</div>
 								</div>
 							</section>
@@ -169,11 +143,16 @@
 										<p>
 											A serious Alaskan objective with over 3,000 feet of vertical ice and mixed terrain. The Moose's Tooth sits deep in the Alaska Range and demands complete technical self-sufficiency — building anchors, managing ropes on sustained steep ice, and navigating complex rock-ice transitions in a committing alpine environment.
 										</p>
-										<!-- Image gallery placeholder -->
-										<p style="text-align:center; color:#aaa; padding: 2em 0;">
-											<i class="icon solid fa-images" style="font-size:2em; display:block; margin-bottom:0.5em;"></i>
-											<em>Photo gallery (10 images) — add to <code>images/moosestooth/</code>.</em>
-										</p>
+
+										<!-- Moose's Tooth Slideshow -->
+										<div style="text-align:center; position:relative; max-width:700px; margin:0 auto;">
+											<img id="moosestooth-slide" src="images/moosestooth/MT1.jpeg" alt="Moose's Tooth photo 1"
+												style="width:100%; border-radius:4px; display:block;" />
+											<button onclick="changeSlide('moosestooth', -1)" class="slide-btn slide-btn-left">&#8592;</button>
+											<button onclick="changeSlide('moosestooth', 1)"  class="slide-btn slide-btn-right">&#8594;</button>
+											<p id="moosestooth-counter" style="color:#aaa; margin-top:0.5em;">1 / 6</p>
+										</div>
+
 									</div>
 								</div>
 							</section>
@@ -184,11 +163,16 @@
 										<p>
 											Seasonal ice climbing across Colorado's premier drainages — Ouray Ice Park, Vail area flows, and Front Range gullies. Colorado ice provides a reliable training ground for building tool placement technique, crampon footwork, and anchor construction across grades from WI2 to WI5+.
 										</p>
-										<!-- Image placeholder -->
-										<p style="text-align:center; color:#aaa; padding: 2em 0;">
-											<i class="icon solid fa-images" style="font-size:2em; display:block; margin-bottom:0.5em;"></i>
-											<em>Photos — add to <code>images/colorado-ice/</code>.</em>
-										</p>
+
+										<!-- Colorado Ice Slideshow -->
+										<div style="text-align:center; position:relative; max-width:700px; margin:0 auto;">
+											<img id="coice-slide" src="images/colorado-ice/COICE1.jpeg" alt="Colorado ice climbing photo 1"
+												style="width:100%; border-radius:4px; display:block;" />
+											<button onclick="changeSlide('coice', -1)" class="slide-btn slide-btn-left">&#8592;</button>
+											<button onclick="changeSlide('coice', 1)"  class="slide-btn slide-btn-right">&#8594;</button>
+											<p id="coice-counter" style="color:#aaa; margin-top:0.5em;">1 / 5</p>
+										</div>
+
 									</div>
 								</div>
 							</section>
@@ -210,7 +194,6 @@
 									<p>
 										Colorado's 14ers and winter alpine routes provide a year-round training environment for technical mountain travel. Winter ascents of high-altitude terrain develop the navigation, weather-reading, and team management skills that translate directly to larger expedition objectives. Colorado mountaineering has been a constant thread connecting technical ice climbing development, peak bagging, and volunteer search-and-rescue preparedness.
 									</p>
-									<!-- Placeholder for additional content -->
 									<p style="text-align:center; color:#aaa; padding: 2em 0;">
 										<i class="icon solid fa-images" style="font-size:2em; display:block; margin-bottom:0.5em;"></i>
 										<em>Photos and additional trip details — add content here as routes and volunteer activities are documented.</em>
@@ -286,6 +269,48 @@
 				</div>
 
 		</div>
+
+		<!-- Slideshow button styles -->
+		<style>
+			.slide-btn {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				background: rgba(0,0,0,0.45);
+				color: white;
+				border: none;
+				font-size: 0.9em;
+				padding: 0.25em 0.5em;
+				cursor: pointer;
+				border-radius: 4px;
+				line-height: 1;
+			}
+			.slide-btn-left  { left:  6px; }
+			.slide-btn-right { right: 6px; }
+			.slide-btn:hover { background: rgba(0,0,0,0.7); }
+		</style>
+
+		<!-- Single shared slideshow script for all galleries -->
+		<script>
+			const slideshows = {
+				denali:      { current: 1, total: 11, prefix: 'images/denali/Denali',          ext: '.jpeg' },
+				rainier:     { current: 1, total: 4,  prefix: 'images/rainier/MtR',            ext: '.jpeg' },
+				moosestooth: { current: 1, total: 6,  prefix: 'images/moosestooth/MT',         ext: '.jpeg' },
+				coice:       { current: 1, total: 5,  prefix: 'images/colorado-ice/COICE',     ext: '.jpeg' }
+			};
+
+			function changeSlide(name, direction) {
+				const show = slideshows[name];
+				show.current += direction;
+				if (show.current < 1)            show.current = show.total;
+				if (show.current > show.total)   show.current = 1;
+
+				document.getElementById(name + '-slide').src =
+					show.prefix + show.current + show.ext;
+				document.getElementById(name + '-counter').textContent =
+					show.current + ' / ' + show.total;
+			}
+		</script>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
